@@ -6,8 +6,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Filament\Models\Contracts\FilamentUser; // [1] Tambahkan ini
+use Filament\Panel; // [2] Tambahkan ini
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -44,5 +46,11 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function canAccessPanel(Panel $panel): bool
+    {
+        // Untuk sementara, izinkan semua user yang punya email berakhiran @gmail.com
+        // Atau cukup return true jika kamu ingin mengizinkan siapa saja yang login
+        return str_ends_with($this->email, '@gmail.com');
     }
 }
