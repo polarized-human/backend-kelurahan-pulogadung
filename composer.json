@@ -6,10 +6,12 @@
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
-        "php": "^8.2",
+        "php": "^8.4",
         "filament/filament": "^3.2",
         "laravel/framework": "^12.0",
+        "ext-intl": "*",
         "laravel/sanctum": "^4.0",
+        "ext-zip": "*",
         "laravel/tinker": "^2.10.1",
         "spatie/pdf-to-image": "^1.2"
     },
