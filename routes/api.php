@@ -22,6 +22,9 @@ Route::get('/infografis', [InfografisController::class, 'index']);
 // Jalur untuk mengambil data berita
 Route::get('/berita', [BeritaController::class, 'index']);
 
+// Tambahkan jalur ini untuk MENYIMPAN berita baru
+Route::post('/berita', [BeritaController::class, 'store']);
+
 // Jalur Portal-info
 Route::get('/fasilitas', [FasilitasController::class, 'index']);
 
