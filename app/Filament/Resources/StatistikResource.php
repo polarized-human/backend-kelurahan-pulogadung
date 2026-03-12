@@ -19,6 +19,8 @@ class StatistikResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
+    protected static ?string $pluralModelLabel = 'Statistik';
+
     public static function form(Form $form): Form
     {
         return $form->schema([
