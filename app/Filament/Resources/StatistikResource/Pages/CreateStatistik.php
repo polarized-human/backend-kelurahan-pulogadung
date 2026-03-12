@@ -9,4 +9,9 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateStatistik extends CreateRecord
 {
     protected static string $resource = StatistikResource::class;
+
+        protected function getRedirectUrl(): string
+    {
+        return $this->getResource()::getUrl('index');
+    }
 }
